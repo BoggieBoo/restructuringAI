@@ -27,7 +27,6 @@ def ask_gpt(text, cik, year):
         12. Was there a cost reduction? Yes or No.
         13. Did they mention when they want to complete the restructuring? If so, what was the timeline provided?"""
     ).format(knowledge=text, company=company, year=year, cik=cik )
-    response = client.chat.completions.create(
-    messages=[{"role": "user", "content": prompt}],model="gpt-4o",)
+    response = client.chat.completions.create(messages=[{"role": "user", "content": prompt}], model="gpt-4o", temperature=0, top_p=1, n=1)             
     return response.choices[0].message.content
 
