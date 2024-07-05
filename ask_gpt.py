@@ -12,20 +12,20 @@ def ask_gpt(text, cik, year):
         Company: {company}
         Year: {year}
         CIK: {cik}
-        Knowledge: {knowledge}
-        1. Company name?
-        2. Company year?
-        3. CIK?
-        4. When was the restructuring plan announced?
-        5. What are the management stated reasons (purpose) of restructuring?
-        6. What savings does the company anticipate?
-        7. What savings did the company accomplish in relation to restructuring performed in prior years?
-        8. How much total restructuring charges were recorded?
-        9. What is the breakdown (components) of the charges? (severance, lease termination)
-        10. How much reduction in employees? (either as a number of employees reduced or as a percentage of the workforce)
-        11. Were any facilities closed? If so, which ones? (List countries, states, or any other locations)
-        12. Was there a cost reduction? Yes or No.
-        13. Did they mention when they want to complete the restructuring? If so, what was the timeline provided?"""
+        Knowledge: {knowledge} (answer the 10 below questions based on your interpretation of the knowledge)
+        0. Company name?
+        1. Company year?
+        2. CIK?
+        3. When was the restructuring plan announced?
+        4. What are the management stated reasons (purpose) of restructuring?
+        5. What savings does the company anticipate?
+        6. What savings did the company accomplish in relation to restructuring performed in prior years?
+        7. How much total restructuring charges were recorded?
+        8. What is the breakdown (components) of the charges? (severance, lease termination)
+        9. How much reduction in employees? (either as a number of employees reduced or as a percentage of the workforce)
+        10. Were any facilities closed? If so, which ones? (List countries, states, or any other locations)
+        11. Was there a cost reduction? Yes or No.
+        12. Did they mention when they want to complete the restructuring? If so, what was the timeline provided?"""
     ).format(knowledge=text, company=company, year=year, cik=cik )
     response = client.chat.completions.create(messages=[{"role": "user", "content": prompt}], model="gpt-4o", temperature=0, top_p=1, n=1)             
     return response.choices[0].message.content
