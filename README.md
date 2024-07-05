@@ -4,4 +4,4 @@ This is a datascraping tool which withdraws restructuring information from SEC 1
 Company data scraped so far is stored in csv format in the 'company_csv' folder.
 
 
-This project was created for my Berkeley Haas Undergraduate Research Apprenticeship (URAP)with Professors Anastassia Fedyk, Tatiana Fedyk, and Natalya Khimich.
+This project was created for my Berkeley Haas Undergraduate Research Apprenticeship (URAP) with Professors Anastassia Fedyk, Tatiana Fedyk, and Natalya Khimich.
