@@ -19,7 +19,7 @@ def pprint(text, line_length=100):
   return('\n'.join(lines))
 
 # extract an item given a 10-K url (default item 7)
-def extract_text(url, item='8'):
+def extract_text(url, item='7'):
   return pprint(extractorApi.get_section(url, item, 'text'))
   
 # test
